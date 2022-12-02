@@ -20,11 +20,11 @@ if __name__ == "__main__":
         open(os.path.join(new_day, part, "solution.py"), "x")
         with open(os.path.join(new_day, part, "solution.py"), "w") as f:
             f.write(
-                """import os
+                f"""import os
 
 
 if __name__ == "__main__":
-    f = open(os.path.join("Day 1", "Part 1", "puzzle_input.txt"), "r")
+    f = open(os.path.join("{new_day}", "{part}", "puzzle_input.txt"), "r")
     puzzle_input = f.read().splitlines()
 """
             )
