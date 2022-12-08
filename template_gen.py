@@ -12,13 +12,12 @@ if __name__ == "__main__":
 
     # Create files.
     os.mkdir(new_day)
+    open(os.path.join(new_day, "puzzle_input.txt"), "x")
 
     for x in range(1, 3):
-        part = f"Part {x}"
-        os.mkdir(os.path.join(new_day, part))
-        open(os.path.join(new_day, part, "puzzle_input.txt"), "x")
-        open(os.path.join(new_day, part, "solution.py"), "x")
-        with open(os.path.join(new_day, part, "solution.py"), "w") as f:
+        part = f"Part_{x}"
+        open(os.path.join(new_day, f"{part}_solution.py"), "x")
+        with open(os.path.join(new_day, f"{part}_solution.py"), "w") as f:
             f.write(
                 f"""import os
 
