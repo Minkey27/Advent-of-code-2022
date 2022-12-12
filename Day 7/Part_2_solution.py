@@ -26,18 +26,10 @@ if __name__ == "__main__":
                     temp_dir.append(sub_dir)
                     dir_sizes[os.path.join(*temp_dir)] += int(file_size[0][0])
 
-    # needed_space = 70000000 - dir_sizes["/"]
-    # print("Needed:", needed_space)
-
-    available = 70000000 - dir_sizes["/"]
-    needed = 30000000 - available
-    print(needed)
-
+    needed = 30000000 - (70000000 - dir_sizes["/"])
     sorted_dir_sizes = sorted(dir_sizes.items(), key=lambda kv: kv[1])
 
-    to_delete = 0
     for directory in sorted_dir_sizes:
-        to_delete += directory[1]
-        if to_delete >= needed:
-            print(to_delete)
+        if directory[1] >= needed:
+            print(directory[1])
             break
